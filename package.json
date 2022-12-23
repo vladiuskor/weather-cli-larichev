@@ -2,7 +2,11 @@
   "name": "weather-cli-larichev",
   "version": "1.0.0",
   "description": "CLI for getting weather",
-  "main": "index.js",
+  "main": "weather.js",
+  "bin" : {
+    "weather" : "weather.js"
+  },
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -19,5 +23,8 @@
   "bugs": {
     "url": "https://github.com/vladiuskor/weather-cli-larichev/issues"
   },
-  "homepage": "https://github.com/vladiuskor/weather-cli-larichev#readme"
+  "homepage": "https://github.com/vladiuskor/weather-cli-larichev#readme",
+  "dependencies": {
+    "axios": "^1.2.1"
+  }
 }
