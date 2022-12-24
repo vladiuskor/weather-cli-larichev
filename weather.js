@@ -1,7 +1,18 @@
 #!/usr/bin/env node
 
 import {getArgs} from './helpers/args.js';
-import {printHelp} from "./services/log.services.js";
+import {printHelp, printSuccess, printError} from "./services/log.services.js";
+import {saveKeyValue} from "./services/storage.service.js";
+
+const saveToken = async (token) => {
+    try {
+        await saveKeyValue('token', token);
+        printSuccess('Токен збережений!');
+    } catch (error) {
+        printError(error.message);
+    }
+}
+
 const initCLI = () => {
     const args = getArgs(process.argv);
 
@@ -14,7 +25,7 @@ const initCLI = () => {
     }
 
     if (args.t) {
-        // Save token
+        return saveToken(args.t)
     }
 
     //Output weather
