@@ -19,6 +19,22 @@ const saveToken = async (token) => {
     }
 }
 
+const getForecast = async () => {
+    try {
+        const weather = await getWeather('ternopil');
+        console.log(weather);
+
+    } catch(error) {
+        if(error?.response?.status === 404) {
+            printError('Невірно вказане місто!');
+        } else if (error?.response?.status === 401) {
+            printError('Невірно вказано токен!');
+        } else {
+            printError(error.message);
+        }
+    }
+}
+
 const initCLI = () => {
     const args = getArgs(process.argv);
 
@@ -33,8 +49,7 @@ const initCLI = () => {
     if (args.t) {
         return saveToken(args.t)
     }
-
-    getWeather('ternopil')
+    getForecast();
     //Output weather
 };
 
