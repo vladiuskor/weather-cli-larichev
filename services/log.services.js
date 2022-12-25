@@ -20,8 +20,20 @@ const printHelp = () => {
     )
 }
 
+const printWeather = (result, icon) => {
+    console.log(
+        dedent`${chalk.bgYellow(' WEATHER ')} Погода у місті ${result.name}
+        ${icon}  ${result.weather[0].description}
+        Температура: ${result.main.temp} (відчувається як ${result.main.feels_like})
+        Вологість: ${result.main.humidity}%
+        швидкість вітру: ${result.wind.speed}
+        `
+    )
+}
+
 export {
     printError,
     printSuccess,
-    printHelp
+    printHelp,
+    printWeather
 }
