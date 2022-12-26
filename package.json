@@ -1,5 +1,5 @@
 {
-  "name": "weather-cli-larichev",
+  "name": "weather-cli-demo-vlad-ko",
   "version": "1.0.0",
   "description": "CLI for getting weather",
   "main": "weather.js",
@@ -8,6 +8,7 @@
   },
   "type": "module",
   "scripts": {
+    "start" : "node weather.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -16,9 +17,10 @@
   },
   "keywords": [
     "cli",
-    "weather"
+    "weather",
+    "educational project"
   ],
-  "author": "",
+  "author": "Vlad Korobko (by Anton Larichev)",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/vladiuskor/weather-cli-larichev/issues"
